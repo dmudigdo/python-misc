@@ -1,5 +1,10 @@
-# Extracts Instagram follower/following data from ...
-# Reads in the HTML, spits out the data as CSV
+'''
+Extracts follower/following name & date from the Instagram HTML export.
+Reads in "followers.html", spits out the data as to "output.csv".
+
+To use, install Python then install BeautifulSoup. Then, run this
+script in the same folder as followers.html.
+'''
 
 from bs4 import BeautifulSoup
 import csv
@@ -35,7 +40,8 @@ def extract_two_level_divs_to_csv(html_file, csv_file):
         writer.writerow(["Handle", "Date"])  # header
         writer.writerows(rows)
 
-# Example usage
+# MAIN
 html_file = "followers.html"   # your HTML file
 csv_file = "output.csv"      # desired output CSV
 extract_two_level_divs_to_csv(html_file, csv_file)
+
